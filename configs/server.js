@@ -31,7 +31,7 @@ const conectarDB = async () => {
 
 export const initServervidor = async () => {
     const app = express();
-    const port = process.env.PORT || 3000;
+    const port = process.env.PORT || 3001;
 
     await conectarDB();
     configurarMiddlewares(app);
