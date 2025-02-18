@@ -1,22 +1,24 @@
 import fs from 'fs/promises';
-import { join } from 'path';
+import {join} from 'path'
 
 export const deleteFileOnError = async (err, req, res, next) => {
     if(req.file && req.filePath){
-        const filePath = join (req.filePath, req.file.filename);
-        try {
+        const filePath = join (req.filePath, req.file.fileame);
+        try{
             await fs.unlink(filePath);
-        } catch (unlinkErr) {
-            console.error('Error deleting file: ', unlinkErr)
+
+        }catch(error){
+            console.error('Error deleting file: ', error)
         }
-    }
-    if(err.status === 400 || err.errors) {
+
+
+    }if(err.status === 400 || err.errors){
         return res.status(400).json({
             success: false,
-            errors: err.errors
+            error: err.errors
         });
     }
-    return res.status(500).json({
+    return res.status(500)({
         success: false,
         message: err.message
     })

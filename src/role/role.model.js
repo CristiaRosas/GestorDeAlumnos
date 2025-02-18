@@ -1,9 +1,9 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const RoleSchema = mongoose.Schema({
-    role: {
+    role:{
         type: String,
-        required: [true, 'El rol es obligatorio']
+        required: [true, 'The role is mandatory']
     }
 });
 

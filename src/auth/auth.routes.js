@@ -1,24 +1,22 @@
-import { Router } from 'express';
-import { login, register } from './auth.controller.js'
-import { registerValidator, loginValidator } from '../middlewares/validator.js';
-import { uploadProfilePicture } from '../middlewares/multer-upload.js';
-import { deleteFileOnError } from '../middlewares/deleteFileOnError.js';
-
+import { Router } from "express";
+import { login, registerUser } from "./auth.controller.js";
+import { registerValidator, loginValidator } from "../middlewares/validator.js";
+import { deleteFileOnError } from "../middlewares/deleteFileOnErros.js";
+ 
 const router = Router();
-
+ 
 router.post(
     '/login',
     loginValidator,
-    deleteFileOnError,
     login
 );
-
+ 
 router.post(
-    '/register',
-    uploadProfilePicture.single("profilePicture"),
+    '/registerUser',
     registerValidator,
     deleteFileOnError,
-    register
+    registerUser
 );
-
+ 
+ 
 export default router;
