@@ -1,0 +1,11 @@
+[{
+  "_id": {
+    "$oid": "67b2ce5c78d29ea6c3e4efe6"
+  },
+  "nameCourse": "Quimica",
+  "descriptionCourse": "Curso de Quimica",
+  "keeper": {
+    "$oid": "67b2bce7058e97c2efd3a0c4"
+  },
+  "status": true
+}]

@@ -1,8 +1,13 @@
 import {Router} from "express";
+
 import {check} from "express-validator";
+
 import { updateUser, deleteUser, asignarCurso, getUserById} from './user.controller.js';
+
 import {existeUsuarioById} from '../helpers/db.validator.js';
 import {validarCampos} from '../middlewares/validar-campos.js';
+
+
 import { validarJWT } from "../middlewares/validar-jwt.js"; 
 
 

@@ -1,0 +1,56 @@
+[{
+  "_id": {
+    "$oid": "67b2bce7058e97c2efd3a0c4"
+  },
+  "name": "Rafael",
+  "surname": "Guttierez",
+  "username": "rgutierrez",
+  "email": "rgutierrez@kinal.edu.gt",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$DyMhbs5rlXV0CKThEy6Exw$0tRQe+wXsx4ZdkmYfQC6OV1hEU7LKCZlRNoXMfBgq5Y",
+  "phone": "12345678",
+  "role": "TEACHER_ROLE",
+  "estado": true,
+  "keeper": [],
+  "createdAt": {
+    "$date": "2025-02-17T04:36:55.110Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T04:36:55.110Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67b2cd541d2f9f0697abfe82"
+  },
+  "name": "Robbin",
+  "surname": "Plato",
+  "username": "rplato",
+  "email": "rplato@kinal.edu.gt",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$7/qLVtbBOvegSGHLHosoPQ$jSXWWFZbvQOGw5to9fQ2IAb9PmVKddQLqWKf2WP924c",
+  "phone": "12345678",
+  "role": "ALUMN_ROLE",
+  "estado": true,
+  "keeper": [
+    {
+      "$oid": "67b2bcfe058e97c2efd3a0c9"
+    },
+    {
+      "$oid": "67b2bcfe058e97c2efd3a0c9"
+    },
+    {
+      "$oid": "67b2ce5c78d29ea6c3e4efe6"
+    },
+    {
+      "$oid": "67b2ce5c78d29ea6c3e4efe6"
+    },
+    {
+      "$oid": "67b2ce5c78d29ea6c3e4efe6"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-02-17T05:47:00.726Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-17T05:52:44.326Z"
+  }
+}]
