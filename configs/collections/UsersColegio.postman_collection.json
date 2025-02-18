@@ -1,0 +1,186 @@
+{
+	"info": {
+		"_postman_id": "713fe9da-23ec-4939-9922-8600cd982660",
+		"name": "UsersColegio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37413968"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Robbin\",\r\n    \"surname\": \"Plato\",\r\n    \"username\": \"rplato\",\r\n    \"email\": \"rplato@kinal.edu.gt\",\r\n    \"password\": \"12345678\",\r\n    \"phone\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/gestorAcademico/v1/auth/registerUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"gestorAcademico",
+						"v1",
+						"auth",
+						"registerUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EditarUser",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"kevin\",\r\n    \"surname\": \"Reyes\",\r\n    \"username\": \"kreyes\",\r\n    \"email\": \"kreyes@kinal.edu\",\r\n    \"phone\": \"22334455\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/gestorAcademico/v1/users/67b0e30923786d0cde2022c0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"gestorAcademico",
+						"v1",
+						"users",
+						"67b0e30923786d0cde2022c0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"rgutierrez@kinal.edu.gt\",\r\n    \"password\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/gestorAcademico/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"gestorAcademico",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EliminarUser",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2IwZTNiODIzNzg2ZDBjZGUyMDIyZDMiLCJpYXQiOjE3Mzk2NDgzNTYsImV4cCI6MTczOTY1MTk1Nn0.hUz0yM1C-ZaUFpumKvfH4XaJn6ZsvhJ-9qMjdb0I7Is",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001/gestorAcademico/v1/users/67b0e30923786d0cde2022c0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"gestorAcademico",
+						"v1",
+						"users",
+						"67b0e30923786d0cde2022c0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "asignarCurso",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nameCourse\": \"Quimica\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/gestorAcademico/v1/users/AsignarAUnCurso/67b2cd541d2f9f0697abfe82",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"gestorAcademico",
+						"v1",
+						"users",
+						"AsignarAUnCurso",
+						"67b2cd541d2f9f0697abfe82"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuscarUsuario",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/gestorAcademico/v1/users/BuscarUser/67b2cd541d2f9f0697abfe82",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"gestorAcademico",
+						"v1",
+						"users",
+						"BuscarUser",
+						"67b2cd541d2f9f0697abfe82"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

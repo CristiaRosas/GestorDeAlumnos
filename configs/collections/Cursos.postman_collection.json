@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "e91e70d8-e345-47c3-8f50-5aa7a23b6322",
+		"name": "Cursos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37413968"
+	},
+	"item": [
+		{
+			"name": "CrearCurso",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2IyYmNlNzA1OGU5N2MyZWZkM2EwYzQiLCJpYXQiOjE3Mzk3NzE0NTMsImV4cCI6MTczOTc3NTA1M30.nUn3MIj0Iunzx6twPRZYhVIqdgRDuFz3uLEK3lKBBDc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nameCourse\": \"Quimica\",\r\n    \"descriptionCourse\": \"Curso de Quimica\",\r\n    \"email\": \"rgutierrez@kinal.edu.gt\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/gestorAcademico/v1/courses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"gestorAcademico",
+						"v1",
+						"courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MostrarCursos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/gestorAcademico/v1/courses/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"gestorAcademico",
+						"v1",
+						"courses",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EliminarCourso",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2IwZTNiODIzNzg2ZDBjZGUyMDIyZDMiLCJpYXQiOjE3Mzk2NjkwNTgsImV4cCI6MTczOTY3MjY1OH0.rLdP8d1qHal31nerTF8ru_q3BAWlXqAaJrsEjBQV4o0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001/gestorAcademico/v1/courses/67b13e4db33df6f65d400add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"gestorAcademico",
+						"v1",
+						"courses",
+						"67b13e4db33df6f65d400add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActualizarCurso",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2IwZTNiODIzNzg2ZDBjZGUyMDIyZDMiLCJpYXQiOjE3Mzk2Njc4NTUsImV4cCI6MTczOTY3MTQ1NX0.7GP9ZFkyX4NzALYHvWfjlhfeYNjUBTMP6mXspYzMN2M",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Practica supervisada\",\r\n    \"description\": \"Este es el curso de practica\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/gestorAcademico/v1/courses/67b1123d6f254f90204196f3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"gestorAcademico",
+						"v1",
+						"courses",
+						"67b1123d6f254f90204196f3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
