@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "e91e70d8-e345-47c3-8f50-5aa7a23b6322",
-		"name": "Cursos",
+		"_postman_id": "7ce6d953-13fe-4166-9536-e46c05f5db04",
+		"name": "Cursos ControlDeAlumnos",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "37413968"
+		"_exporter_id": "37413747"
 	},
 	"item": [
 		{
@@ -27,14 +27,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3001/gestorAcademico/v1/courses",
+					"raw": "http://localhost:3001/ControlDeAlumnos/v1/courses",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3001",
 					"path": [
-						"gestorAcademico",
+						"ControlDeAlumnos",
 						"v1",
 						"courses"
 					]
@@ -48,14 +48,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3001/gestorAcademico/v1/courses/",
+					"raw": "http://localhost:3001/ControlDeAlumnos/v1/courses/",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3001",
 					"path": [
-						"gestorAcademico",
+						"ControlDeAlumnos",
 						"v1",
 						"courses",
 						""
@@ -76,14 +76,14 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:3001/gestorAcademico/v1/courses/67b13e4db33df6f65d400add",
+					"raw": "http://localhost:3001/ControlDeAlumnos/v1/courses/67b13e4db33df6f65d400add",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3001",
 					"path": [
-						"gestorAcademico",
+						"ControlDeAlumnos",
 						"v1",
 						"courses",
 						"67b13e4db33df6f65d400add"
@@ -113,14 +113,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3001/gestorAcademico/v1/courses/67b1123d6f254f90204196f3",
+					"raw": "http://localhost:3001/ControlDeAlumnos/v1/courses/67b1123d6f254f90204196f3",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3001",
 					"path": [
-						"gestorAcademico",
+						"ControlDeAlumnos",
 						"v1",
 						"courses",
 						"67b1123d6f254f90204196f3"

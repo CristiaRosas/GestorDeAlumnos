@@ -2,53 +2,42 @@ import User from '../user/user.model.js';
 import { hash, verify } from 'argon2';
 import { generarJWT } from '../helpers/generate-jwt.js';
 
-export const  login = async(req, res) => {
-    const {email, password, username} = req.body;
-
+export const login = async (req, res) => {
     try {
+        const { email, password } = req.body;
 
-        const user = await User.findOne({
-            $or: [{email}, {username}]
-        }) 
-
-        if(!user){
-            return res.status(400).json({
-                msg: 'Incorrect credentials, Email does not exist in the database'
-            });
+        if (!email || !password) {
+            return res.status(400).json({ msg: 'Correo y contraseña son requeridos' });
         }
 
-        if(!user.estado){
-            return res.status(400).json({
-                msg: 'The user does not exist in the database'
-            });
+        const user = await User.findOne({ email });
+
+        if (!user || !user.estado) {
+            return res.status(400).json({ msg: 'Usuario inexistente en la base de datos' });
         }
 
-        const validPassword = await verify(user.password, password);
-        if(!validPassword){
-            return res.status(400).json({
-                msg: 'The password is incorrect'
-            })
+        const isPasswordValid = await verify(user.password, password);
+        if (!isPasswordValid) {
+            return res.status(400).json({ msg: 'La contraseña es incorrecta' });
         }
 
         const token = await generarJWT(user.id);
 
-        res.status(200).json({
-            msg: 'Login successful',
+        return res.status(200).json({
+            msg: `Bienvenido ${user.name}, has iniciado sesión con éxito!`,
             userDetails: {
-                username: user.username,
-                token: token,
+                token,
                 profilePicture: user.profilePicture
             }
-        })
-
-    } catch (e) {
-        console.log(e);
-        res.status(500).json({
-            message: "Server error",
-            error: e.message
-        })
+        });
+    } catch (error) {
+        console.error('Error al intentar logearse:', error);
+        return res.status(500).json({
+            msg: 'Error del servidor',
+            error: error.message
+        });
     }
-}
+};
 
 export const registerUser = async (req, res) => {
     try {
@@ -67,9 +56,8 @@ export const registerUser = async (req, res) => {
         })
 
         return res.status(201).json({
-            message: "User registered successfully",
+            message: `El Usuario ${user.name} fue registrado con exito!`,
             userDetails: {
-                name: data.name,
                 user: user.email,
                 role: data.role
             }
@@ -78,7 +66,7 @@ export const registerUser = async (req, res) => {
     } catch (error) {
         console.log(error);
         return res.status(500).json({
-            message: "User could not register",
+            message: "Hubo un error al registrar al usuario",
             error: error.message
         })
     }

@@ -1,0 +1,33 @@
+[{
+  "_id": {
+    "$oid": "67c27e96bc8f2601cc16e274"
+  },
+  "nameCourse": "Psicologia Empresarial",
+  "descriptionCourse": "Curso de Psicologia",
+  "relacion": {
+    "$oid": "67c1edbd4cb05b7ec0d64270"
+  },
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c280fd9d1955db7e05c81e"
+  },
+  "nameCourse": "Ingles",
+  "descriptionCourse": "Curso de ingles",
+  "relacion": {
+    "$oid": "67c1ed9e4cb05b7ec0d6426c"
+  },
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c28a015e7a158fdf3eae1d"
+  },
+  "nameCourse": "Matematicas",
+  "descriptionCourse": "Curso de mate",
+  "relacion": {
+    "$oid": "67c1ed9e4cb05b7ec0d6426c"
+  },
+  "status": true
+}]

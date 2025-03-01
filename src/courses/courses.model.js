@@ -9,7 +9,7 @@ const CoursesSchema = Schema({
         type: String,
         required: true
     },
-    keeper: {
+    relacion: {
         type: Schema.Types.ObjectId,
         ref: 'User',
         required: true

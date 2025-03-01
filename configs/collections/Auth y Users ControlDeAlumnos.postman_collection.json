@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "713fe9da-23ec-4939-9922-8600cd982660",
-		"name": "UsersColegio",
+		"_postman_id": "7bff2d11-3058-46b8-826d-26bac8020375",
+		"name": "Auth y Users ControlDeAlumnos",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "37413968"
+		"_exporter_id": "37413747"
 	},
 	"item": [
 		{
@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Robbin\",\r\n    \"surname\": \"Plato\",\r\n    \"username\": \"rplato\",\r\n    \"email\": \"rplato@kinal.edu.gt\",\r\n    \"password\": \"12345678\",\r\n    \"phone\": \"12345678\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Peralta\",\r\n    \"surname\": \"Martinez\",\r\n    \"username\": \"pepa\",\r\n    \"email\": \"pepa@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"phone\": \"12345678\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -21,14 +21,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3001/gestorAcademico/v1/auth/registerUser",
+					"raw": "http://localhost:3001/ControlDeAlumnos/v1/auth/registerUser",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3001",
 					"path": [
-						"gestorAcademico",
+						"ControlDeAlumnos",
 						"v1",
 						"auth",
 						"registerUser"
@@ -44,7 +44,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"kevin\",\r\n    \"surname\": \"Reyes\",\r\n    \"username\": \"kreyes\",\r\n    \"email\": \"kreyes@kinal.edu\",\r\n    \"phone\": \"22334455\"\r\n}",
+					"raw": "{\r\n    \"name\": \"kevin\",\r\n    \"surname\": \"Reyes\",\r\n    \"username\": \"kev\",\r\n    \"email\": \"kev@kinal.edu\",\r\n    \"phone\": \"22334455\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -52,17 +52,17 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3001/gestorAcademico/v1/users/67b0e30923786d0cde2022c0",
+					"raw": "http://localhost:3001/ControlDeAlumnos/v1/users/67c1edbd4cb05b7ec0d64270",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3001",
 					"path": [
-						"gestorAcademico",
+						"ControlDeAlumnos",
 						"v1",
 						"users",
-						"67b0e30923786d0cde2022c0"
+						"67c1edbd4cb05b7ec0d64270"
 					]
 				}
 			},
@@ -75,7 +75,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"rgutierrez@kinal.edu.gt\",\r\n    \"password\": \"12345678\"\r\n}",
+					"raw": "{\r\n    \"email\": \"crosas@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -83,14 +83,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3001/gestorAcademico/v1/auth/login",
+					"raw": "http://localhost:3001/ControlDeAlumnos/v1/auth/login",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3001",
 					"path": [
-						"gestorAcademico",
+						"ControlDeAlumnos",
 						"v1",
 						"auth",
 						"login"
@@ -106,22 +106,22 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2IwZTNiODIzNzg2ZDBjZGUyMDIyZDMiLCJpYXQiOjE3Mzk2NDgzNTYsImV4cCI6MTczOTY1MTk1Nn0.hUz0yM1C-ZaUFpumKvfH4XaJn6ZsvhJ-9qMjdb0I7Is",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2MxZWQ5ZTRjYjA1YjdlYzBkNjQyNmMiLCJpYXQiOjE3NDA3NjYwMjgsImV4cCI6MTc0MDc2OTYyOH0._eODlwDq0AcqNyT0FXnTARno813Mu6MEQOKvqaoiLPk",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "http://localhost:3001/gestorAcademico/v1/users/67b0e30923786d0cde2022c0",
+					"raw": "http://localhost:3001/ControlDeAlumnos/v1/users/67c1f03ff485c5c7fff4442e",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3001",
 					"path": [
-						"gestorAcademico",
+						"ControlDeAlumnos",
 						"v1",
 						"users",
-						"67b0e30923786d0cde2022c0"
+						"67c1f03ff485c5c7fff4442e"
 					]
 				}
 			},
@@ -142,14 +142,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3001/gestorAcademico/v1/users/AsignarAUnCurso/67b2cd541d2f9f0697abfe82",
+					"raw": "http://localhost:3001/ControlDeAlumnos/v1/users/AsignarAUnCurso/67b2cd541d2f9f0697abfe82",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3001",
 					"path": [
-						"gestorAcademico",
+						"ControlDeAlumnos",
 						"v1",
 						"users",
 						"AsignarAUnCurso",
@@ -165,18 +165,40 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3001/gestorAcademico/v1/users/BuscarUser/67b2cd541d2f9f0697abfe82",
+					"raw": "http://localhost:3001/ControlDeAlumnos/v1/users/",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3001",
 					"path": [
-						"gestorAcademico",
+						"ControlDeAlumnos",
+						"v1",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuscarAlumnoPorId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/ControlDeAlumnos/v1/users/BuscarUser/67c1ed9e4cb05b7ec0d6426c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"ControlDeAlumnos",
 						"v1",
 						"users",
 						"BuscarUser",
-						"67b2cd541d2f9f0697abfe82"
+						"67c1ed9e4cb05b7ec0d6426c"
 					]
 				}
 			},

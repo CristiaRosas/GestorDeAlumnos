@@ -1,0 +1,171 @@
+[{
+  "_id": {
+    "$oid": "67c1ed3e4cb05b7ec0d64268"
+  },
+  "name": "Robbin",
+  "surname": "Plato",
+  "username": "rplato",
+  "email": "rplato@kinal.edu.gt",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$MFZj9IXX3itgfzim2s0lVA$PvGjyU5q9uyMN0JCECnpGyqrkjsPskwh0Hup+QKYztM",
+  "phone": "12345678",
+  "role": "ALUMN_ROLE",
+  "estado": false,
+  "relacion": [],
+  "createdAt": {
+    "$date": "2025-02-28T17:07:10.636Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-01T03:13:26.183Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c1ed9e4cb05b7ec0d6426c"
+  },
+  "name": "Cristian",
+  "surname": "Rosas",
+  "username": "crosas",
+  "email": "crosas@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$diCcy/TmnU46mK1VuFxF1g$x7Mf+AnW40Bmx3qui2RpkO/EZotF75s4Z0VdppM3ldI",
+  "phone": "12345678",
+  "role": "TEACHER_ROLE",
+  "estado": true,
+  "relacion": [],
+  "createdAt": {
+    "$date": "2025-02-28T17:08:46.084Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-28T17:08:46.084Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c1edbd4cb05b7ec0d64270"
+  },
+  "name": "kevin",
+  "surname": "Reyes",
+  "username": "kev",
+  "email": "kreyes@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$+3wwl/IFbQ5rAWBJRsBp8g$Yt3bAUr26WFQq2o51z8PicjDgPDN8PR77ipigG/Aj9g",
+  "phone": "22334455",
+  "role": "ALUMN_ROLE",
+  "estado": false,
+  "relacion": [
+    {
+      "$oid": "67c27e96bc8f2601cc16e274"
+    },
+    {
+      "$oid": "67c2851f8c64836f96893daa"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-02-28T17:09:17.195Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-01T04:23:22.048Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c1ef65efd5da84975d7fd1"
+  },
+  "name": "Jonathan",
+  "surname": "Alvarez",
+  "username": "jonas",
+  "email": "jonas@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$GiHFp16Z9nsk14ZQUsgPJQ$NUB/QbCiBowXnqUDJUxullrVn25hyX6ejuNU2NPezok",
+  "phone": "12345678",
+  "role": "ALUMN_ROLE",
+  "estado": true,
+  "relacion": [
+    {
+      "$oid": "67c27e96bc8f2601cc16e274"
+    }
+  ],
+  "createdAt": {
+    "$date": "2025-02-28T17:16:21.639Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-01T04:14:17.068Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c1f03ff485c5c7fff4442e"
+  },
+  "name": "Jose",
+  "surname": "Aguilar",
+  "username": "mandril",
+  "email": "madnril@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$JnjHG8YVnD4K/AcZHkdAVA$pooQYSDsotJLu3eBXc3eWkFNwQLAPxwQV0/mYLMC1jc",
+  "phone": "12345678",
+  "role": "ALUMN_ROLE",
+  "estado": false,
+  "relacion": [],
+  "createdAt": {
+    "$date": "2025-02-28T17:19:59.083Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-28T18:07:21.827Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c1f2b26d58ab34e9616e8a"
+  },
+  "name": "Elmer",
+  "surname": "Santos",
+  "username": "Esantos",
+  "email": "Esantos@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$C19IennsOGN0GLHWOwcIyA$XL2gy/BDHpNV61TV0XfeYc7iucFtE9+h7Vi9AOEARZU",
+  "phone": "12345678",
+  "role": "TEACHER_ROLE",
+  "estado": true,
+  "relacion": [],
+  "createdAt": {
+    "$date": "2025-02-28T17:30:26.335Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-28T17:30:26.335Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c1f3fb003ccd657d291fbf"
+  },
+  "name": "Carlos",
+  "surname": "Cortez",
+  "username": "Ccortez",
+  "email": "Ccortez@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$m2Vo87kKreB5hKbDtf0NTw$bm8HEPqJgM1QoaFE3iEyAKhsk+ozAgnNM/rLxnDzY64",
+  "phone": "12345678",
+  "role": "TEACHER_ROLE",
+  "estado": true,
+  "relacion": [],
+  "createdAt": {
+    "$date": "2025-02-28T17:35:55.042Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-28T17:35:55.042Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c1f59600899f914e092b78"
+  },
+  "name": "Peralta",
+  "surname": "Martinez",
+  "username": "pepa",
+  "email": "pepa@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$T+ro52W/USkLTixqef+NGg$aiImBf8oZeADlIp9doX8r+NJqSfuxKi08aidos3Fm0I",
+  "phone": "12345678",
+  "role": "ALUMN_ROLE",
+  "estado": true,
+  "relacion": [],
+  "createdAt": {
+    "$date": "2025-02-28T17:42:46.499Z"
+  },
+  "updatedAt": {
+    "$date": "2025-02-28T17:42:46.499Z"
+  }
+}]

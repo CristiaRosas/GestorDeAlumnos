@@ -3,108 +3,129 @@ import Course from './courses.model.js'
 
 export const createCourse = async (req, res) => {
     try {
+        const { email, ...courseData } = req.body;
         
-        const data = req.body;
-
-        const user = await User.findOne({email: data.email});   
-
-        if(!user){
+        const user = await User.findOne({ email });
+        if (!user) {
             return res.status(404).json({
-                succes: false,
-                message: 'The teacher was not found'
-            })
+                success: false,
+                message: 'profesor no encontrado en la base de datos'
+            });
         }
 
-        const course = new Course({
-            ...data,
-            keeper: user._id,
+        if (user.role !== 'TEACHER_ROLE') {
+            return res.status(403).json({
+                success: false,
+                message: 'Solo usuarios con TEACHER_ROLE Pueden crear cursos!'
+            });
+        }
+
+        const course = await Course.create({
+            ...courseData,
+            relacion: user._id
         });
 
-        await course.save();
-
-        res.status(200).json({
-            succes: true,
+        return res.status(201).json({
+            success: true,
             course
         });
-
     } catch (error) {
-        res.status(500).json({
-            succes: false,
-            msg: 'Error creating course',
-            error
-        })
+        console.error('Hubo un error al crear el curso:', error);
+        return res.status(500).json({
+            success: false,
+            msg: 'Error al crear el curso',
+            error: error.message
+        });
     }
-}
+};
 
 export const showCourse = async (req, res) => {
-    const {limite = 10, desde = 0} = req.query;
-    const query = {status: true};
-
     try {
-        const course = await Course.find(query)
-            .populate('keeper', 'name')
-            .skip(Number(desde))
-            .limit(Number(limite));
+        const { limite = 10, desde = 0 } = req.query;
+        const query = { status: true };
 
+        const [courses, total] = await Promise.all([
+            Course.find(query)
+                .populate('relacion', 'name')
+                .skip(Number(desde))
+                .limit(Number(limite)),
+            Course.countDocuments(query)
+        ]);
 
-        const total = await Course.countDocuments(query);
-
-        res.status(200).json({
-            succes: true,
+        return res.status(200).json({
+            success: true,
             total,
-            course
-        })
+            courses
+        });
     } catch (error) {
-        res.status(500).json({
-            succes: false,
-            msg: 'Error getting courses',
+        console.error('Hubo un error al mostrar los cursos:', error);
+        return res.status(500).json({
+            success: false,
+            msg: 'Error al obtener los cursos',
             error: error.message
-        })
+        });
     }
-} 
+};
+
 
 
 export const deleteCourse = async (req, res) => {
-
-    const {id} = req.params;
-
     try {
-        await Course.findByIdAndUpdate(id, {status: false});
+        const { id } = req.params;
+        const course = await Course.findById(id);
 
-        res.status(200).json({
-            succes: true,
-            message: 'Course deleted'
-        })
+        if (!course) {
+            return res.status(404).json({
+                success: false,
+                message: 'No se encontro el curso en la base de datos'
+            });
+        }
 
+        course.status = false;
+        await course.save();
+
+        return res.status(200).json({
+            success: true,
+            message: 'El curso fue eliminado exitosamente!'
+        });
     } catch (error) {
-        res.status(500).json({
-            succes: false,
-            msg: 'Error deleting course',
-            error
-        })
+        console.error('Hubo un error al eliminar el curso:', error);
+        return res.status(500).json({
+            success: false,
+            msg: 'Error al eliminar el curso',
+            error: error.message
+        });
     }
+};
 
-}
-
-export const updateCourse = async (req, res  = response) => {
+export const updateCourse = async (req, res) => {
     try {
-        const {id} = req.params;
-        const {_id, ...data} = req.body;
+        const { id } = req.params;
+        const { _id, ...data } = req.body;
 
-        const coruse = await Course.findByIdAndUpdate(id, data, {new: true});
+        const course = await Course.findById(id);
+        if (!course) {
+            return res.status(404).json({
+                success: false,
+                msg: 'No se encontro el curso en la base de datos'
+            });
+        }
 
-        res.status(200).json({
-            succes: true,
-            msj: 'Course successfully updated',
-            coruse
-        })
+        Object.assign(course, data);
+        await course.save();
 
+        return res.status(200).json({
+            success: true,
+            msg: 'Actualizacion del curso exitosa!',
+            course
+        });
     } catch (error) {
-        res.status(500).json({
-            succes: false,
-            msj: "Error updating course",
-            error
-        })
+        console.error('Hubo un error al actualizar el curso:', error);
+        return res.status(500).json({
+            success: false,
+            msg: 'Error al actualizar el curso',
+            error: error.message
+        });
     }
-} 
+};
     

@@ -12,7 +12,7 @@ router.post(
     [
         validarJWT,
         tieneRole("TEACHER_ROLE"),
-        check('email', 'This is not a valid email').not().isEmpty(),
+        check('email', 'Este no es un correo electrónico válido').not().isEmpty(),
         validarCampos
     ],
     createCourse
@@ -26,7 +26,7 @@ router.delete(
     [
         validarJWT,
         tieneRole("TEACHER_ROLE"),
-        check("id", "It is not a valid id").isMongoId(),
+        check("id", "No es valido id").isMongoId(),
         validarCampos         
     ],
     deleteCourse
@@ -37,7 +37,7 @@ router.put(
     [
         validarJWT,
         tieneRole("TEACHER_ROLE"),
-        check("id", "It is not a valid id").isMongoId(),
+        check("id", "No es valido id").isMongoId(),
         validarCampos
     ],
     updateCourse

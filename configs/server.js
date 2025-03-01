@@ -23,17 +23,17 @@ const middlewares = (app) => {
 };
 
 const routes = (app) => {
-    app.use('/gestorAcademico/v1/auth', authRoutes);
-    app.use('/gestorAcademico/v1/users', userRoutes);
-    app.use('/gestorAcademico/v1/courses', courseRoutes);
+    app.use('/ControlDeAlumnos/v1/auth', authRoutes);
+    app.use('/ControlDeAlumnos/v1/users', userRoutes);
+    app.use('/ControlDeAlumnos/v1/courses', courseRoutes);
 };
 
 export const conetarDB = async() => {
     try {
         await dbConnection();
-        console.log('Database connected successfully');
+        console.log('La base de datos se conectó correctamente');
     } catch (error) {
-        console.log('Error connecting to database', error) 
+        console.log('Error al conectar a la base de datos', error) 
     }
 };
 
@@ -46,9 +46,9 @@ export const initServer = async () => {
         conetarDB(app);
         routes(app);
         app.listen(port);
-        console.log(`Server running on port ${port}`);
+        console.log(`Servidor ejecutándose en el puerto ${port}`);
     } catch (error) {
-        console.log(`Server init failed ${error}`)
+        console.log(`Error al iniciar el servidor ${error}`)
     }
 }
 
