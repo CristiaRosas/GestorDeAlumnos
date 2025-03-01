@@ -123,23 +123,33 @@ export const deleteUser = async (req, res) => {
 
 
 export const updatePassword = async (req, res) => {
-    try {
-        const { id } = req.params;
-        const { password } = req.body;
+    const { id } = req.params;
+    const { password } = req.body;
 
-        if (!password) {
-            return res.status(400).json({
+    if (!password) {
+        return res.status(400).json({
+            success: false,
+            msg: 'La contraseña es obligatoria!'
+        });
+    }
+
+    try {
+        const user = await User.findById(id);
+        if (!user) {
+            return res.status(404).json({
                 success: false,
-                msg: 'La contraseña es obligatoria!'
+                msg: 'Usuario no encontrado'
             });
         }
 
         const hashedPassword = await hash(password);
-        await User.findByIdAndUpdate(id, { password: hashedPassword });
+        
+        user.password = hashedPassword;
+        await user.save();
 
         return res.status(200).json({
             success: true,
-            msg: 'La contraseña fue actualizada con exito!'
+            msg: 'La contraseña fue actualizada con éxito!'
         });
     } catch (error) {
         console.error('Hubo un error al actualizar la contraseña:', error);
@@ -150,6 +160,7 @@ export const updatePassword = async (req, res) => {
         });
     }
 };
+
 
 export const asignarCurso = async (req, res) => {
     try {

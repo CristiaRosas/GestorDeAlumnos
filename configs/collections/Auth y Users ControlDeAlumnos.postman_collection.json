@@ -203,6 +203,29 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "EditarContraseña",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/ControlDeAlumnos/v1/users/BuscarUser/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"ControlDeAlumnos",
+						"v1",
+						"users",
+						"BuscarUser",
+						""
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
